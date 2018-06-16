@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <h3>Search in Boston</h3>
+
+
+
+
+  <div class="input-group">
+    <input [(ngModel)]="search"
+           placeholder="Search item.."
+           class="form-control">
+
+    <div class="input-group-append">
+  <button (click)="searchCraigs()" class="btn-success">
+    Search
+  </button>
+  </div>
+  </div>
+  <h4 align="center">CATEGORY</h4>
+  <div class =container-fluid align="center">
+
+    <select [(ngModel)]="category" style="width: 500px" class="form-control">
+      <option value="" disabled selected>Select Category..</option>
+      <option value="hhh">Housing</option>
+      <option value="jjj">Jobs</option>
+    </select>
+  </div>
+
+
+
+  <ul class="list-group">
+    <li *ngFor="let s of searchList"
+        class="list-group-item">
+      <img src="{{s.image}}" width="50px">
+    <a href = {{s.about}}> {{s.title}} </a><br> {{s.description}}
+    </li>
+  </ul>
+</div>
+
